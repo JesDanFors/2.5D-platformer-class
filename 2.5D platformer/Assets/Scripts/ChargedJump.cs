@@ -23,7 +23,7 @@ public class ChargedJump : MonoBehaviour{
          jumpCharge += Time.deltaTime / chargeTime;
       }
 
-      if ( !Input.GetKeyDown(KeyCode.Space)&& _groundCheck.IsGrounded){
+      if ( Input.GetKeyUp(KeyCode.Space) && _groundCheck.IsGrounded){
          var jumpForce = Mathf.Lerp(minJumpForce, maxJumpForce, jumpCharge);
          
       }
